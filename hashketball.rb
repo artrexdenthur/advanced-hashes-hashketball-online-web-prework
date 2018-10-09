@@ -180,11 +180,11 @@ def most_points_scored
 end
 
 def winning_team
+  scores = []
   game_hash.each do |side, team_hash|
-    game_hash.fetch(side)[:score] = 0
+    score_hash = { side: side, points: 0 }
     team_hash.fetch(:players).each do |player, stats|
-      binding.pry
-      game_hash.fetch(side)[:score] += stats.fetch(:points)
+       += stats.fetch(:points)
     end
   end
 end
