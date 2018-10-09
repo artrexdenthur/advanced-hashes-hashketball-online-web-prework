@@ -191,7 +191,7 @@ def winning_team
   winner = scores.max_by { | score_hash | score_hash.fetch(:score) }.fetch(:name)
 end
 
-def player_with_the_longest_name
+def player_with_longest_name
   
 end
 
