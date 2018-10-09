@@ -182,13 +182,13 @@ end
 def winning_team
   scores = []
   game_hash.each do |side, team_hash|
-    score_hash = { side: side, score: 0 }
+    score_hash = { name: team_hash.fetch(:team_name), score: 0 }
     team_hash.fetch(:players).each do |player, stats|
        score_hash[:score] += stats.fetch(:points)
     end
     scores.push score_hash
   end
-  winner = scores.max_by { | score_hash | score_hash.fetch(:score) }
+  winner = scores.max_by { | score_hash | score_hash.fetch(:score) }.fetch(:name)
 end
 
 def player_with_the_longest_name
