@@ -184,6 +184,8 @@ def winning_team
     side[:score] = 0
     team_hash.fetch(:players).each do |player, stats|
       side[:score] += stats.fetch('points')
+    end
+  end
 end
 
 def player_with_the_longest_name
