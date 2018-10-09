@@ -182,6 +182,7 @@ end
 def winning_team
   game_hash.each do |side, team_hash|
     game_hash[side][:score] = 0
+    binding.pry
     team_hash.fetch(:players).each do |player, stats|
        game_hash[side][:score] += stats.fetch(:points)
     end
