@@ -192,7 +192,7 @@ def winning_team
 end
 
 def player_with_longest_name
-  all_players.max_by { |player, stat_hash| player.length }.key
+  all_players.max_by { |player, stat_hash| player.length }.keys[0]
 end
 
 def long_name_steals_a_ton?
